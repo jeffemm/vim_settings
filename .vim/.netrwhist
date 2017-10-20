@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='C:/Git_Repos/Solpad_Mobile_Pwr/Debug'
+let g:netrw_dirhist_2='C:/git/PWR/src'
+let g:netrw_dirhist_3='C:/git/HUB/Hub_include'

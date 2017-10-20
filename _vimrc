@@ -1,7 +1,62 @@
-set nocompatible
+"============================================================================
+" VUNDLE REQUIRED
+"============================================================================
+"
+set nocompatible              " be iMproved, required
+filetype off                  " required
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
+
+" set the runtime path to include Vundle and initialize
+set rtp+=$HOME/vimfiles/bundle/Vundle.vim
+call vundle#begin('$HOME/vimfiles/bundle')
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+"
+" Usage:
+"   PluginInstall
+"   PluginClean
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Plugin 'vim-airline/vim-airline'
+
+Plugin 'scrooloose/nerdtree'
+
+Plugin 'jistr/vim-nerdtree-tabs'
+
+Plugin 'ctrlpvim/ctrlp.vim'
+
+Plugin 'vim-scripts/Conque-GDB'
+
+" Plugin 'easymotion/vim-easymotion'
+
+
+
+
+call vundle#end()
+
+
+"============================================================================
+" NON-VUNDLE CONFIG
+"============================================================================
+"set nocompatible
+"source $VIMRUNTIME/vimrc_example.vim
+"source $VIMRUNTIME/mswin.vim
+"behave mswin
+
+" NERDTree Options
+"let NERDTreeWinSize=31
+"let NERDTreeWinPos=left
+" nerdtree-tabs options
+let g:nerdtree_tabs_open_on_new_tab=0
+let g:nerdtree_tabs_open_on_gui_startup=0
+let g:nerdtree_tabs_synchronize_view = 0
+let g:nerdtree_tabs_autoclose = 0
+let g:nerdtree_tabs_open_on_console_startup = 0
+
 
 set number
 set nowrap
@@ -31,10 +86,15 @@ autocmd FileType c setlocal foldmethod=syntax
 
 :map <F6> <C-w>W <C-w>_
 :map <F7> <C-w>_
+:map <S-F7> <C-w>=
 :map <F8> <C-w>w <C-w>_
+:map <S-F9> :NERDTreeToggle<CR>
 
 :map <S-F12> :wa<Bar>exe "mksession!"<CR>
 
+" CtrlP - always jump to open buffer
+let g:ctrlp_tabpage_position = 'ac'
+let g:ctrlp_switch_buffer = 'ET'
 
 set printoptions=header:2,syntax:y,number:y,wrap:y,duplex:off,portrait:n,paper:letter
 
