@@ -2,6 +2,16 @@
 " VUNDLE REQUIRED
 "============================================================================
 "
+" If this is pulled from my vim_settings github repo, the Vundle.vim repo will
+" not be pulled automatically. It is necessary to clone this repo also into
+" ~/vimfiles/bundle/Vundle.vim
+" >git clone https://github.com/VundleVim/Vundle.vim.git ~/vimfiles/bundle/VUndle.vim
+" (or equivalent)
+" Then start or restart gVim and run PluginInstall
+"
+" Also, need to make sure Windows command line git is installed if
+" appropriate.
+"
 set nocompatible              " be iMproved, required
 filetype off                  " required
 source $VIMRUNTIME/vimrc_example.vim
