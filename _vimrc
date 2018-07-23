@@ -4,8 +4,8 @@
 "
 set nocompatible              " be iMproved, required
 filetype off                  " required
-source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
+source $VIMRUNTIME/vimrc_example.vim
 behave mswin
 
 " set the runtime path to include Vundle and initialize
@@ -21,17 +21,22 @@ call vundle#begin('$HOME/vimfiles/bundle')
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline'
 
 Plugin 'scrooloose/nerdtree'
 
-Plugin 'jistr/vim-nerdtree-tabs'
+" Plugin 'jistr/vim-nerdtree-tabs'
 
 Plugin 'ctrlpvim/ctrlp.vim'
 
 Plugin 'vim-scripts/Conque-GDB'
 
 " Plugin 'easymotion/vim-easymotion'
+
+Plugin 'tpope/vim-fugitive'
+
+Plugin 'mileszs/ack.vim'
+
 
 
 
@@ -57,7 +62,10 @@ let g:nerdtree_tabs_synchronize_view = 0
 let g:nerdtree_tabs_autoclose = 0
 let g:nerdtree_tabs_open_on_console_startup = 0
 
+" Airline
+let g:airline_powerline_fonts = 1
 
+set guifont=Courier_New:h10:cANSI:qDEFAULT
 set backspace=indent,eol,start
 set ruler
 set showcmd
@@ -71,6 +79,7 @@ filetype plugin on
 filetype plugin indent on
 
 autocmd FileType text setlocal textwidth=78
+autocmd FileType markdown setlocal textwidth=55
 autocmd FileType c setlocal textwidth=78
 
 syntax on
@@ -79,7 +88,7 @@ set sessionoptions=blank,buffers,curdir,folds,help,options,tabpages,winsize,winp
 set colorcolumn=+1
 set shiftwidth=2
 set tabstop=2
-set softtabstop=4
+set softtabstop=2
 set expandtab
 
 " This is used by filetype.vim script in $VIMRUNTIME to set filetype for .h
@@ -89,6 +98,12 @@ let g:c_syntax_for_h = 1
 
 autocmd FileType c setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType c setlocal foldmethod=syntax
+
+autocmd FileType cpp setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType cpp setlocal foldmethod=syntax
+
+autocmd FileType python setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType python setlocal foldmethod=syntax
 
 autocmd FileType perl let perl_fold=1
 autocmd FileType perl setlocal foldlevelstart=1 textwidth=80
